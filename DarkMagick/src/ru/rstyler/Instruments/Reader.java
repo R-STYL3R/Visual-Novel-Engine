@@ -2,8 +2,8 @@ package ru.rstyler.Instruments;
 
 import java.util.HashMap;
 
-interface Reader<Income, Result> {
-    Result read (Income arg);
-    HashMap<String, String> ResText(Result tem);
+interface Reader{
+    void initialization(String path);
+    HashMap<String, String> ResultText();
     String Split();
 }
