@@ -1,3 +1,1 @@
-Гейл: "слова слова слова"
-"слова слова слова"
-"фыфыфы"
+music: "Z:\\R_STYLER IX\\учеба\\git\\visual-novel-engine\\DarkMagick\\src\\ru\\rstyler\\sounds\\built_to_fall.wav"
