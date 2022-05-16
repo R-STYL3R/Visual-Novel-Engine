@@ -13,13 +13,19 @@ import java.io.FileNotFoundException;
  */
 
 public class Character implements ru.rstyler.Character {
+    String Name="";
     /**
      *Метод возвращения имени персонажа
      * @param Name
      * @return возвращает строку имя персонажа
      */
     @Override
-    public String Name(String Name) {
+    public String setName(String Name) {
+        this.Name = Name;
+        return Name;
+    }
+    @Override
+    public String getName(){
         return Name;
     }
 
