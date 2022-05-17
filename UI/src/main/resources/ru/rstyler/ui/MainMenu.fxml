@@ -16,23 +16,14 @@
                   <Image url="@images/MM_BG.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="416.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Montserrant light;" text="Void Entry" wrappingWidth="467.13671875">
-               <font>
-                  <Font name="Lucida Sans Demibold Roman" size="86.0" />
-               </font>
-            </Text>
+            <Text fill="WHITE" layoutX="416.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Void Entry" wrappingWidth="467.13671875" />
             <Button fx:id="LoadButton" layoutX="406.0" layoutY="628.0" mnemonicParsing="false" onAction="#LoadGame" prefHeight="17.0" prefWidth="165.0" style="-fx-font-family: Montserrat Light;" text="Load" />
             <Button fx:id="settingsButton" layoutX="754.0" layoutY="628.0" mnemonicParsing="false" onAction="#Settings" prefHeight="17.0" prefWidth="165.0" style="-fx-font-family: Montserrat Light;" text="Settings" />
             <Button fx:id="startButton" layoutX="75.0" layoutY="628.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="17.0" prefWidth="165.0" style="-fx-font-family: Montserrat;" text="Start">
                <font>
-                  <Font name="Bauhaus 93" size="12.0" />
+                  <Font name="Algerian" size="12.0" />
                </font></Button>
             <Button fx:id="exitButton" layoutX="1062.0" layoutY="628.0" mnemonicParsing="false" onAction="#onExitButton" prefHeight="17.0" prefWidth="165.0" style="-fx-font-family: Montserrat Light;" text="Exit" />
-            <Text id="Text" layoutX="447.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Montserrat Thin;" text="Text" wrappingWidth="385.13671875">
-               <font>
-                  <Font size="72.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
    </children>
