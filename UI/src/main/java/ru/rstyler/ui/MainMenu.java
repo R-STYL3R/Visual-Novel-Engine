@@ -12,6 +12,7 @@ public class MainMenu extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Void Entry");
         stage.setScene(scene);
+        scene.getStylesheets (). add (getClass (). getResource ("MainMenu.css").toExternalForm ());
         stage.show();
     }
 }
