@@ -3,9 +3,12 @@ package ru.rstyler.ui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
@@ -27,7 +30,9 @@ public class MainMenuController {
     Scene SettingsInit() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("SettingsMenu.fxml"));
         Scene settings = new Scene(fxmlLoader.load(), 1280, 720);
-       
+       SettingsController.MusicVolume.setMin(0);
+       SettingsController.MusicVolume.setMax(100);
+
         return settings;
     }
     @FXML
@@ -36,12 +41,16 @@ public class MainMenuController {
     }
     @FXML
     protected void LoadGame(ActionEvent event){
-        startButton.setText("you are gay");
+        LoadButton.setText("you are gay");
     }
     @FXML
-    protected void Settings(ActionEvent event) throws IOException {
+    protected void Settings() throws IOException {
+        //MainMenu.PrimaryStage.setScene(SettingsInit());
+
+
         MainMenu.PrimaryStage.setScene(SettingsInit());
 
+        MainMenu.PrimaryStage.show();
     }
     @FXML
     protected void onExitButton(ActionEvent event) {

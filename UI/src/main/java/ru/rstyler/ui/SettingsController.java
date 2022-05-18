@@ -3,8 +3,12 @@ package ru.rstyler.ui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
 import java.io.File;
@@ -15,11 +19,13 @@ import java.util.Scanner;
 
 public class SettingsController {
     @FXML
-    protected Slider MusicVolume = new Slider(0.0, 100.0, 20.0);
+    static protected Slider MusicVolume = new Slider(0.0, 100.0, 20.0);
     @FXML
-    protected Text MusicVol;
+    protected Label MusicVol;
     @FXML
     protected Slider SoundVolume;
+    @FXML
+    protected Button ConfirmOptions;
 
     @FXML
     protected void BackToMenu() throws IOException {
@@ -31,13 +37,12 @@ public class SettingsController {
     }
     @FXML
     protected void MusicVolumeSet(){
-        MusicVolume.setMin(0);
-        MusicVolume.setMax(100);
+
     }
     @FXML
-    protected void MusicVolumeChange(ActionEvent event) {
-        MusicVolume.setMin(0.0);
-        MusicVolume.setMax(100.0);
-        // MusicVol.setText(String.valueOf(MusicVolume.getValue()));
+    protected void MusicVolumeChange() {
+         MusicVol.setText(String.valueOf(MusicVolume.getValue()));
+
+
     }
 }
