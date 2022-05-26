@@ -90,6 +90,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.sarl</groupId>
+            <artifactId>io.sarl.javafx</artifactId>
+            <version>0.9.0</version>
+            <scope>import</scope>
+        </dependency>
     </dependencies>
 
     <build>

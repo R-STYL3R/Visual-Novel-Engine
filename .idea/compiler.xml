@@ -14,4 +14,9 @@
       <module name="UI" target="17" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="UI" options="--add-exports javafx.graphics/com.sun.javafx.font=UI" />
+    </option>
+  </component>
 </project>

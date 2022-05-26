@@ -6,8 +6,10 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import ru.rstyler.fields.Sounds;
 
 import java.util.Objects;
+
 
 public class MainMenu extends Application {
     static Stage PrimaryStage = null;
@@ -20,7 +22,8 @@ public class MainMenu extends Application {
         PrimaryStage.setTitle("Void Entry");
         PrimaryStage.setScene(scene);
         PrimaryStage.setResizable(false);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("MainMenu.css")).toExternalForm());
+        Sounds a = new Sounds();
+        scene.getStylesheets().add(Objects.requireNonNull(MainMenu.class.getResource("MainMenu.css")).toExternalForm());
         PrimaryStage.show();
     }
 }

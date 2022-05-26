@@ -1,0 +1,4 @@
+я
+ге
+й
+BGPlace.setImage(new Image(String.valueOf(GMController.class.getResource("images/Town.png"))));

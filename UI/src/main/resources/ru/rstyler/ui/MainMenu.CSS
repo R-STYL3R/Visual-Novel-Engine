@@ -20,4 +20,5 @@
 .text{
     -fx-font-family: "Montserrat";
     -fx-font-size: 100px;
+    -fx-fill: white;
 }

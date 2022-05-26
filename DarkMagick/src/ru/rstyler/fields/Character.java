@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
  */
 
 public class Character implements ru.rstyler.Character {
+    String SpritePath="";
     String Name="";
     /**
      *Метод возвращения имени персонажа
@@ -39,11 +40,17 @@ public class Character implements ru.rstyler.Character {
     public String SpritesPath(String Path) throws FileNotFoundException {
         File sprite = new File(Path);
         if(sprite.isDirectory()){
+            SpritePath = Path;
             return Path;
         }else{
             throw new FileNotFoundException("Invalid file path");
         }
 
+    }
+
+    @Override
+    public String getSpritePath() {
+        return SpritePath;
     }
 
     /**
