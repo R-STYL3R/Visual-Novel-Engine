@@ -36,18 +36,28 @@ public class GMController implements Initializable {
     @FXML
     protected Label Save;
 
-    int pervert=0;
+    int pervert=1;
     Scanner alfa = new Scanner(new File("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\resources\\ru\\rstyler\\ui\\config.txt"));
-    String s = "BGPlace.setImage(new Image(String.valueOf(GMController.class.getResource(\"images/Town.png\"))));";
     public GMController() throws FileNotFoundException {
     }
 
     @FXML
    protected void ScenarioGoes(MouseEvent event) throws IOException {
-        if(alfa.hasNext()){
+        if(alfa.hasNext() && pervert<=3){
             CharPhrase.setText(alfa.nextLine());
-
-        }else {
+            pervert++;
+        }else if (alfa.hasNext() && pervert==4){
+            CharPhrase.setText(alfa.nextLine());
+            BGPlace.setImage(new Image(String.valueOf(GMController.class.getResource("images/Town.png"))));
+            pervert++;
+        }else if(alfa.hasNext() && pervert == 5) {
+            CharPhrase.setText(alfa.nextLine());
+            SpritePlace.setImage(new Image(String.valueOf(GMController.class.getResource("images/Tor2.png"))));
+            pervert++;
+        }else if(pervert>5 && alfa.hasNextLine()){
+            CharPhrase.setText(alfa.nextLine());
+            pervert++;
+        }else{
             BackToMenu();
         }
    }

@@ -14,8 +14,11 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import ru.rstyler.FileReader;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -40,7 +43,7 @@ public class SettingsController implements Initializable {
     protected CheckBox SkipText;
     @FXML
     protected Button ConfirmOptions;
-
+    protected File sets = new File ("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\java\\ru\\rstyler\\ui\\Settings.txt");
 
     @FXML
     protected void BackToMenu() throws IOException {
@@ -58,14 +61,38 @@ public class SettingsController implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) throws NumberFormatException {
+        Scanner ConfigInspect = null;
+        try {
+            ConfigInspect = new Scanner(sets);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        int mus,soun;
+
+        try {
+             mus = Integer.valueOf(ConfigInspect.next());
+             soun = Integer.valueOf(ConfigInspect.next());
+            MusicVolumeSlider.setValue(mus);
+            MusVolumeValue = (int) MusicVolumeSlider.getValue();
+            MusicVolumeArea.setText(Integer.toString(MusVolumeValue));
+
+            SoundVolumeSlider.setValue(soun);
+            SoundValue = (int) SoundVolumeSlider.getValue();
+            SoundVolumeArea.setText(Integer.toString(SoundValue));
+        } catch (NumberFormatException e) {
+          System.out.print("Wrong type of int");
+        }
 
 
-        SoundValue = (int) SoundVolumeSlider.getValue();
+
+
+
+       /* SoundValue = (int) SoundVolumeSlider.getValue();
         SoundVolumeArea.setText(Integer.toString(SoundValue));
 
         MusVolumeValue = (int) MusicVolumeSlider.getValue();
-        MusicVolumeArea.setText(Integer.toString(MusVolumeValue));
+        MusicVolumeArea.setText(Integer.toString(MusVolumeValue));*/
         MusicVolumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
@@ -86,9 +113,12 @@ public class SettingsController implements Initializable {
 
     }
     @FXML
-    protected void SaveConfig(){
-
-
+    protected void SaveConfig() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+        FileWriter SetSave = new FileWriter(sets);
+        SetSave.write((int)MusicVolumeSlider.getValue()+"\n");
+        SetSave.write((int)SoundVolumeSlider.getValue()+"\n");
+        SetSave.close();
+        MainMenu.gain.setValue(-(float)MusicVolumeSlider.getValue());
     }
 
 

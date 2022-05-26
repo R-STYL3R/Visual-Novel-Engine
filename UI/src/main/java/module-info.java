@@ -11,6 +11,7 @@ module UI {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires DarkMagick;
+    requires java.desktop;
 
     opens ru.rstyler.ui to javafx.fxml;
     exports ru.rstyler.ui;
