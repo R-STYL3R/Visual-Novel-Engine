@@ -68,7 +68,7 @@ public class GMController implements Initializable {
         SpritePlace.setImage(new Image(String.valueOf(GMController.class.getResource("images/Tor.png"))));
         Tor.setName("Торнике");
         CharName.setText(Tor.getName());
-        CharPhrase.setText(Tor.Phrase("Меня зовут Торнике, мне 20 лет, я родился в Сицилии..."));
+        CharPhrase.setText(Tor.Phrase("Меня зовут Торнике Напирели, я родился на Сицилии в 25 году. Это — наша семья. Стою с родителями и сестрой Франческой..."));
     }
     @FXML
     protected void BackToMenu() throws IOException {

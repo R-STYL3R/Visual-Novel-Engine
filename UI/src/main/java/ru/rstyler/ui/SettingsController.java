@@ -31,10 +31,6 @@ public class SettingsController implements Initializable {
     @FXML
     protected Slider MusicVolumeSlider;
     @FXML
-    protected  Label MusicVolumeArea;
-    @FXML
-    protected  Label SoundVolumeArea;
-    @FXML
     protected Slider SoundVolumeSlider;
     static int SoundValue;
     @FXML
@@ -75,11 +71,10 @@ public class SettingsController implements Initializable {
              soun = Integer.valueOf(ConfigInspect.next());
             MusicVolumeSlider.setValue(mus);
             MusVolumeValue = (int) MusicVolumeSlider.getValue();
-            MusicVolumeArea.setText(Integer.toString(MusVolumeValue));
+
 
             SoundVolumeSlider.setValue(soun);
             SoundValue = (int) SoundVolumeSlider.getValue();
-            SoundVolumeArea.setText(Integer.toString(SoundValue));
         } catch (NumberFormatException e) {
           System.out.print("Wrong type of int");
         }
@@ -98,7 +93,7 @@ public class SettingsController implements Initializable {
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
 
                 MusVolumeValue = (int) MusicVolumeSlider.getValue();
-                MusicVolumeArea.setText(Integer.toString(MusVolumeValue));
+
             }
         });
         SoundVolumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
@@ -106,7 +101,7 @@ public class SettingsController implements Initializable {
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
 
                 SoundValue = (int) SoundVolumeSlider.getValue();
-                SoundVolumeArea.setText(Integer.toString(SoundValue));
+
             }
         });
 
@@ -118,7 +113,8 @@ public class SettingsController implements Initializable {
         SetSave.write((int)MusicVolumeSlider.getValue()+"\n");
         SetSave.write((int)SoundVolumeSlider.getValue()+"\n");
         SetSave.close();
-        MainMenu.gain.setValue(-(float)MusicVolumeSlider.getValue());
+
+        MainMenu.gain.setValue((float)MusicVolumeSlider.getValue());
     }
 
 

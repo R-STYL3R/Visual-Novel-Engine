@@ -62,16 +62,15 @@ public class MainMenu extends Application {
     public static void Music() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         File sets = new File ("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\java\\ru\\rstyler\\ui\\Settings.txt");
         Scanner set = new Scanner(sets);
-        float volume = (100 - (float) Integer.valueOf(set.next()));
+        float volume = ((float) Integer.valueOf(set.next()));
+
 
         clip.open(audioStream);
         System.out.print(clip.getLevel());
         gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        gain.setValue(5);
+        gain.setValue(volume);
         clip.start();
-        if(!clip.isRunning()) {
-            clip.setMicrosecondPosition(0);
-        }
+        clip.loop(10);
 
 
 
