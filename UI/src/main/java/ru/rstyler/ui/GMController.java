@@ -37,7 +37,7 @@ public class GMController implements Initializable {
     protected Label Save;
 
     int pervert=1;
-    Scanner alfa = new Scanner(new File("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\resources\\ru\\rstyler\\ui\\config.txt"));
+    Scanner alfa = new Scanner(new File("./UI/src/main/resources/ru/rstyler/ui/config.txt"));
     public GMController() throws FileNotFoundException {
     }
 

@@ -20,7 +20,7 @@ import java.util.Objects;
 public class MainMenu extends Application {
     static Stage PrimaryStage = null;
    static FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("MainMenu.fxml"));
-    static File file = new File("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\resources\\ru\\rstyler\\ui\\images\\MMmus.wav");
+    static File file = new File("./UI/src/main/resources/ru/rstyler/ui/images/MMmus.wav");
 
     static AudioInputStream audioStream;
     static {
@@ -60,7 +60,7 @@ public class MainMenu extends Application {
         Music();
     }
     public static void Music() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File sets = new File ("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\java\\ru\\rstyler\\ui\\Settings.txt");
+        File sets = new File ("./UI/src/main/java/ru/rstyler/ui/Settings.txt");
         Scanner set = new Scanner(sets);
         float volume = ((float) Integer.valueOf(set.next()));
 
