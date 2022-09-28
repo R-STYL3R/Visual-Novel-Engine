@@ -11,6 +11,7 @@ import org.controlsfx.tools.Utils;
 import ru.rstyler.fields.Sounds;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Scanner;
 import javax.sound.sampled.*;
 import java.io.File;
@@ -47,15 +48,14 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Scene scene = new Scene( fxmlLoader.load(), 1280, 720);
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         PrimaryStage = stage;
         PrimaryStage.setTitle("Void Entry");
         PrimaryStage.setScene(scene);
         PrimaryStage.setResizable(false);
         Image icon = new Image(String.valueOf(MainMenu.class.getResource("images/icon.png")));
         PrimaryStage.getIcons().add(icon);
-        Sounds a = new Sounds();
-        scene.getStylesheets().add(Objects.requireNonNull(MainMenu.class.getResource("MainMenu.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(Objects.requireNonNull(MainMenu.class.getResource("MainMenu.CSS")).toExternalForm()));
         PrimaryStage.show();
         Music();
     }

@@ -37,7 +37,7 @@ public class GMController implements Initializable {
     protected Label Save;
 
     int pervert=1;
-    Scanner alfa = new Scanner(new File("./UI/src/main/resources/ru/rstyler/ui/config.txt"));
+    Scanner alfa = new Scanner(new File("./UI/src/main/resources/ru/rstyler/ui/Config.txt"));
     public GMController() throws FileNotFoundException {
     }
 
@@ -74,7 +74,7 @@ public class GMController implements Initializable {
     protected void BackToMenu() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("MainMenu.fxml"));
         Scene alfa = new Scene(fxmlLoader.load());
-        alfa.getStylesheets().add(Objects.requireNonNull(getClass().getResource("MainMenu.css")).toExternalForm());
+        alfa.getStylesheets().add(Objects.requireNonNull(getClass().getResource("MainMenu.CSS")).toExternalForm());
         MainMenu.PrimaryStage.setScene(alfa);
     }
     @FXML

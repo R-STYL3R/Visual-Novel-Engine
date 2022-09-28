@@ -39,13 +39,13 @@ public class SettingsController implements Initializable {
     protected CheckBox SkipText;
     @FXML
     protected Button ConfirmOptions;
-    protected File sets = new File ("Z:\\project_Z\\visual-novel-engine\\UI\\src\\main\\java\\ru\\rstyler\\ui\\Settings.txt");
+    protected File sets = new File ("./UI/src/main/java/ru/rstyler/ui/Settings.txt");
 
     @FXML
     protected void BackToMenu() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("MainMenu.fxml"));
         Scene alfa = new Scene(fxmlLoader.load());
-        alfa.getStylesheets().add(Objects.requireNonNull(getClass().getResource("MainMenu.css")).toExternalForm());
+        alfa.getStylesheets().add(Objects.requireNonNull(getClass().getResource("MainMenu.CSS")).toExternalForm());
         MainMenu.PrimaryStage.setScene(alfa);
     }
     protected static double getMusValue(){
@@ -76,18 +76,10 @@ public class SettingsController implements Initializable {
             SoundVolumeSlider.setValue(soun);
             SoundValue = (int) SoundVolumeSlider.getValue();
         } catch (NumberFormatException e) {
-          System.out.print("Wrong type of int");
+            throw new NumberFormatException();
         }
 
 
-
-
-
-       /* SoundValue = (int) SoundVolumeSlider.getValue();
-        SoundVolumeArea.setText(Integer.toString(SoundValue));
-
-        MusVolumeValue = (int) MusicVolumeSlider.getValue();
-        MusicVolumeArea.setText(Integer.toString(MusVolumeValue));*/
         MusicVolumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
